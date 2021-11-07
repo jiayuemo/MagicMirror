@@ -10,8 +10,8 @@
 
 const FIVE_MINUTES_IN_MS = 300000;
 const LOCATION_ID_NYC = 5128581;
-
-const SECRET_WEATHER_API_KEY = process.env.WEATHER_API_KEY;
+// replace me, process.env breaks the app https://github.com/MichMich/MagicMirror/issues/1756
+const SECRET_WEATHER_API_KEY = process.env.WEATHER_API_KEY; 
 
 let config = {
 	address: "localhost", 	// Address to listen on, can be:
@@ -80,7 +80,7 @@ let config = {
 				type: "current",
 				location: "New York",
 				locationID: LOCATION_ID_NYC,
-				apiKey: "",
+				apiKey: SECRET_WEATHER_API_KEY,
 				degreeLabel: true,
 				updateInterval: FIVE_MINUTES_IN_MS,
 				showHumidity: true,
@@ -95,7 +95,7 @@ let config = {
 				type: "forecast",
 				location: "New York",
 				locationID: LOCATION_ID_NYC,
-				apiKey: "",
+				apiKey: SECRET_WEATHER_API_KEY,
 				degreeLabel: true,
 				updateInterval: FIVE_MINUTES_IN_MS,
 				initialLoadDelay: 100,
