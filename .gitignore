@@ -71,6 +71,7 @@ Temporary Items
 /config/*
 !/config/config.js.sample
 !/config/jim.config.js
+.npmrc
 
 # Vim
 ## swap

@@ -5,7 +5,7 @@
 	"main": "js/electron.js",
 	"scripts": {
 		"start": "DISPLAY=\"${DISPLAY:=:0}\" ./node_modules/.bin/electron js/electron.js",
-		"start:desktop": "node_modules/.bin/electron js/electron.js",
+		"start:desktop": "cross-env WEATHER_API_KEY=$npm_config_openweather_api_key node_modules/.bin/electron js/electron.js",
 		"start:dev": "DISPLAY=\"${DISPLAY:=:0}\" ./node_modules/.bin/electron js/electron.js dev",
 		"server": "node ./serveronly",
 		"install": "echo \"Installing vendor files ...\n\" && cd vendor && npm install --loglevel=error",
@@ -47,6 +47,7 @@
 	},
 	"homepage": "https://magicmirror.builders",
 	"devDependencies": {
+		"cross-env": "^7.0.3",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-jest": "^24.4.2",
 		"eslint-plugin-jsdoc": "^36.1.0",

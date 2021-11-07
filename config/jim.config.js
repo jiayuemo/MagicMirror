@@ -7,6 +7,12 @@
  * see https://docs.magicmirror.builders/getting-started/configuration.html#general
  * and https://docs.magicmirror.builders/modules/configuration.html
  */
+
+const FIVE_MINUTES_IN_MS = 300000;
+const LOCATION_ID_NYC = 5128581;
+
+const SECRET_WEATHER_API_KEY = process.env.WEATHER_API_KEY;
+
 let config = {
 	address: "localhost", 	// Address to listen on, can be:
 							// - "localhost", "127.0.0.1", "::1" to listen on loopback interface
@@ -73,8 +79,11 @@ let config = {
 				weatherProvider: "openweathermap",
 				type: "current",
 				location: "New York",
-				locationID: "5128581", //ID from http://bulk.openweathermap.org/sample/city.list.json.gz; unzip the gz file and find your city
-				apiKey: "YOUR_OPENWEATHER_API_KEY"
+				locationID: LOCATION_ID_NYC,
+				apiKey: "",
+				degreeLabel: true,
+				updateInterval: FIVE_MINUTES_IN_MS,
+				showHumidity: true,
 			}
 		},
 		{
@@ -85,8 +94,13 @@ let config = {
 				weatherProvider: "openweathermap",
 				type: "forecast",
 				location: "New York",
-				locationID: "5128581", //ID from http://bulk.openweathermap.org/sample/city.list.json.gz; unzip the gz file and find your city
-				apiKey: "YOUR_OPENWEATHER_API_KEY"
+				locationID: LOCATION_ID_NYC,
+				apiKey: "",
+				degreeLabel: true,
+				updateInterval: FIVE_MINUTES_IN_MS,
+				initialLoadDelay: 100,
+				colored: true,
+				showPrecipitationAmount: true,
 			}
 		},
 		{

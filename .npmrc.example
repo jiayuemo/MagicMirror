@@ -1,0 +1,5 @@
+# Configuration example file, this one is tracked
+# but ".npmrc" is not tracked, gitignored
+
+# API keys
+openweather-api-key="MYSUPERSECRETKEY"
