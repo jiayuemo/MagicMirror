@@ -43,6 +43,15 @@ let config = {
 	// false, default for all NON-armv6l devices
 	// true, force serveronly mode, because you want to.. no UI on this device
 
+	// Webview config options for MMM-YouTubeWebView
+	electronOptions: {
+    webPreferences: {
+      webviewTag: true,
+      contextIsolation: false,
+      enableRemoteModule: true
+    },
+  },
+
 	modules: [
 		{
 			module: "alert",
@@ -57,6 +66,7 @@ let config = {
 			config: {
 				showSunTimes: true,
 				showMoonTimes: true,
+				showPeriodUpper: true,
 				// latitude and longitude of the brooklyn bridge
 				lat: 40.706001,
 				lon: -73.997002,
@@ -67,23 +77,19 @@ let config = {
 				analogPlacement: "right",
 			}
 		},
-		{
-			module: "calendar",
-			header: "US Holidays",
-			position: "top_left",
-			config: {
-				calendars: [
-					{
-						symbol: "calendar-check",
-						url: "webcal://www.calendarlabs.com/ical-calendar/ics/76/US_Holidays.ics"
-					}
-				]
-			}
-		},
-		{
-			module: "compliments",
-			position: "lower_third"
-		},
+		// {
+		// 	module: "calendar",
+		// 	header: "US Holidays",
+		// 	position: "top_left",
+		// 	config: {
+		// 		calendars: [
+		// 			{
+		// 				symbol: "calendar-check",
+		// 				url: "webcal://www.calendarlabs.com/ical-calendar/ics/76/US_Holidays.ics"
+		// 			}
+		// 		]
+		// 	}
+		// },
 		{
 			module: "weather",
 			position: "top_right",
@@ -140,6 +146,22 @@ let config = {
 				endTags: ["[&#8230;]"],
 			}
 		},
+		{
+			module: 'MMM-YouTubeWebView', // https://gitlab.com/doctorfree/MMM-YouTubeWebView
+			position: "top_left", // This can be any of the regions.
+			config: {
+				// See 'Configuration options' in README.md for more information.
+				video_id: "5qap5aO4i9A",
+				color: "red",
+				autoplay: true,
+				controls: false,
+				loop: true,
+				modestbranding: true,
+				width: "550px", // Can be a percentage, e.g. 100%
+				height: "300px",
+				referrer: "http://your.public.domain.org", // Needed when YouTube will not play video
+			},
+		},	
 	]
 };
 
