@@ -53,7 +53,19 @@ let config = {
 		},
 		{
 			module: "clock",
-			position: "top_left"
+			position: "top_left",
+			config: {
+				showSunTimes: true,
+				showMoonTimes: true,
+				// latitude and longitude of the brooklyn bridge
+				lat: 40.706001,
+				lon: -73.997002,
+				displayType: "both",
+				analogSize: "150px",
+				// a dark green hex color
+				secondsColor: "#1e6439",
+				analogPlacement: "right",
+			}
 		},
 		{
 			module: "calendar",
