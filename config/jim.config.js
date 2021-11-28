@@ -123,12 +123,21 @@ let config = {
 					{
 						title: "New York Times",
 						url: "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml"
-					}
+					},
+					{
+						title: "TechCrunch",
+						url: "https://techcrunch.com/feed/"
+					},
 				],
 				showSourceTitle: true,
 				showPublishDate: true,
 				broadcastNewsFeeds: true,
-				broadcastNewsUpdates: true
+				broadcastNewsUpdates: true,
+				showDescription: true,
+				truncDescription: false,
+				logFeedWarnings: true,
+				removeEndTags: "description",
+				endTags: ["[&#8230;]"],
 			}
 		},
 	]
