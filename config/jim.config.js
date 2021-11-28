@@ -126,7 +126,7 @@ let config = {
 					},
 					{
 						title: "TechCrunch",
-						url: 'https://techcrunch.com/feed/'
+						url: "https://techcrunch.com/feed/"
 					},
 				],
 				showSourceTitle: true,
